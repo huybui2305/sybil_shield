@@ -2,8 +2,8 @@
 
 import { useState, useEffect, useRef } from "react";
 import {
-  Search, ShieldAlert, ShieldCheck, Activity, Terminal,
-  ExternalLink, Zap, BrainCircuit, Waves, Lock, Eye,
+  ShieldAlert, ShieldCheck, Activity, Terminal,
+  ExternalLink, Zap, BrainCircuit, Waves, Eye,
 } from "lucide-react";
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from "framer-motion";
 
@@ -200,7 +200,7 @@ export default function Home() {
       <Scanlines />
 
       {/* Custom cursor */}
-      <motion.div className="fixed pointer-events-none z-[999] rounded-full" style={{ width: 16, height: 16, left: mouse.x - 8, top: mouse.y - 8, border: "1px solid rgba(99,102,241,0.7)", mixBlendMode: "screen" as any }} animate={{ scale: (focused || hoverBtn) ? 2.2 : 1 }} transition={{ duration: 0.15 }} />
+      <motion.div className="fixed pointer-events-none z-[999] rounded-full" style={{ width: 16, height: 16, left: mouse.x - 8, top: mouse.y - 8, border: "1px solid rgba(99,102,241,0.7)", mixBlendMode: "screen" as unknown as any }} animate={{ scale: (focused || hoverBtn) ? 2.2 : 1 }} transition={{ duration: 0.15 }} />
       <div className="fixed pointer-events-none z-[999] w-1 h-1 rounded-full bg-indigo-400" style={{ left: mouse.x - 2, top: mouse.y - 2 }} />
 
       {/* Ambient glows */}
@@ -371,7 +371,7 @@ export default function Home() {
                   style={{ 
                     rotateX: rotX, 
                     rotateY: rotY, 
-                    transformStyle: "preserve-3d" as any,
+                    transformStyle: "preserve-3d" as unknown as any,
                     background: "#030810", 
                     border: `1px solid ${A.border}`, 
                     boxShadow: `0 0 90px ${A.glow},0.07), 0 40px 100px rgba(0,0,0,0.6)` 
@@ -535,7 +535,7 @@ function FlagRow({ text, color, delay = 0 }: { text: string; color: "rose" | "am
 
 function MetricCard({ label, value, alert = false, accent = false }: { label: string; value: any; alert?: boolean; accent?: boolean }) {
   return (
-    <motion.div whileHover={{ scale: 1.02, brightness: 1.1 } as any} className="p-3.5 relative group cursor-default"
+    <motion.div whileHover={{ scale: 1.02, brightness: 1.1 } as unknown as any} className="p-3.5 relative group cursor-default"
       style={{ background: alert ? "rgba(244,63,94,0.04)" : "rgba(255,255,255,0.018)", border: `1px solid ${alert ? "rgba(244,63,94,0.14)" : "rgba(255,255,255,0.04)"}` }}>
       <CB color={alert ? "rgba(244,63,94,0.28)" : accent ? "rgba(99,102,241,0.18)" : "rgba(255,255,255,0.05)"} s={6} />
       <p className="text-[9px] tracking-[0.2em] text-slate-400 uppercase mb-2">{label}</p>
