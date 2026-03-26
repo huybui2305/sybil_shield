@@ -1,0 +1,17 @@
+# Backend
+backend/.env
+backend/venv/
+backend/__pycache__/
+backend/uvicorn_*.log
+backend/uvicorn_out.log
+backend/uvicorn_err.log
+
+# Frontend
+frontend/node_modules/
+frontend/.next/
+frontend/.env.local
+frontend/.env
+
+# OS
+.DS_Store
+Thumbs.db

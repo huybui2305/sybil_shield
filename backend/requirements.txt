@@ -1,0 +1,7 @@
+fastapi
+uvicorn
+python-dotenv
+pydantic
+opengradient==0.9.1
+eth-account
+httpx
